@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Listado</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-item *ngFor="let item of person">
+
+  <ion-input [(ngModel)]="item.nombre" name="nombre"></ion-input>
+
+  <ion-input [(ngModel)]="item.apellido" name="apellido"></ion-input>
+
+  <ion-input [(ngModel)]="item.email" name="email"></ion-input>
+</ion-item>
+
+<ion-button routerLink="/form-rest">Agregar Usuario</ion-button>
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size="12" sizeMd="3" *ngFor="let pers of person">
+      {{pers.Nombre}}
+      {{pers.Apellido}}
+      {{pers.Email}}
+          <ion-button color="secondary" [routerLink]="['/', 'posts', 'edit', pers.id]">
+            Update
+          </ion-button>
+          <ion-button color="danger" (click)="deletePerson(pers.id)">
+            Remove
+          </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/post-form">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

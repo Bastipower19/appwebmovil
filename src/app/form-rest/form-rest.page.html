@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ editing ? 'Update': 'Create'}} a New Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size-md="6" offset-md="3">
+
+
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input #Nombre [(ngModel)]="person.Nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input #Apellido [(ngModel)]="person.Apellido"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input #Email [(ngModel)]="person.Email"></ion-input>
+          </ion-item>
+       <ion-button expand="full" (click)="editing? updatePers(): saveDatos()" class="ion-margin-top">
+        {{editing ? 'Update': 'Save'}}
+       </ion-button>
+
+
+
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>
